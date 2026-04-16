@@ -113,11 +113,54 @@ product quality optimization
 return reduction strategies
 SKU-level performance monitoring
 
+
+## Category Analysis (06)
+### 1. Revenue by Category
+Electronics → 2,018,229.53
+Home → 1,260,730.54
+Sports → 987,048.96
+Toys → 640,088.06
+Fashion → 587,083.14
+Grocery → 288,711.99
+Beauty → 83,400.83
+
+### Insight: Revenue is heavily concentrated in Electronics and Home, which together dominate the business.
+
+### This indicates:
+
+1. strong dependence on a small number of categories high revenue concentration risk
+2. Return Rate by Category
+Fashion → 8.05%
+Electronics → 7.30%
+Home → 5.53%
+Sports → 5.28%
+Toys → 5.13%
+Beauty → 3.42%
+Grocery → 2.59%
+ 
+### Insight: Fashion has the highest return rate (clear quality/expectation mismatch issue) Electronics is both high revenue AND high return rate (critical trade-off category) Grocery and Beauty are stable, low-return categories
+
+4. Revenue Loss by Category
+Electronics → 166,260.11
+Home → 74,698.63
+Sports → 51,167.41
+Fashion → 45,591.28
+Toys → 32,037.92
+Grocery → 15,780.72
+Beauty → 3,219.90
+
+### Insight: Electronics is responsible for the majority of financial loss, even though it is also the top revenue generator.
+
+This confirms a key business tension:
+
+High revenue categories are also the highest risk categories.
+
 ## Objectives
 - Quantify revenue lost due to returns
 - Identify high-risk customers
 - Detect underperforming products
 - Generate business insights using SQL
+
 
 ## Tools
 - SQL (PostgreSQL / MySQL)
