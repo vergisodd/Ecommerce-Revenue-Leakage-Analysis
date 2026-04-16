@@ -10,6 +10,16 @@
 
 
 -- =========================
+-- 0. Cleaning (Making sure the tables are empty)
+
+DELETE FROM returns;
+DELETE FROM orders;
+DELETE FROM products;
+DELETE FROM customers;
+
+-- =========================
+
+-- =========================
 -- 1. CUSTOMERS (remove duplicates)
 -- =========================
 INSERT INTO customers (customer_id, customer_age, customer_gender)
