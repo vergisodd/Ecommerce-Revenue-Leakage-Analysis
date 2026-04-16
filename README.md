@@ -1,172 +1,191 @@
 # Ecommerce Revenue Leakage Analysis
 
 ## Overview
-This project analyzes e-commerce transaction data to identify revenue loss caused by returns, understand customer behavior, and evaluate product performance.
 
-# Key Business Findings:
-## Revenue Overview
-Total Revenue: $5,865,293.05
-Return Loss: $388,755.97
-Net Revenue: $5,476,537.08
-## Return Rate
-Overall Return Rate: 5.52%
-## Business Interpretation
-Returns represent a meaningful revenue leakage (~$389K).
-The business is still financially healthy, with ~93% of revenue retained after returns.
-This indicates an optimization problem, not a failing system.
-## Key Insight
+This project analyzes e-commerce transaction data to identify revenue loss caused by customer returns, evaluate product performance, and understand customer behavior patterns. The goal is to simulate a real-world retail analytics workflow using SQL, from raw data ingestion to business insights.
 
-This dataset represents a $5.8M e-commerce operation where:
+---
 
-A 5.5% return rate is causing nearly $390K in revenue leakage, highlighting opportunities in product quality, customer targeting, or return policy optimization.
+## Key Business Findings
 
-## Customer Analysis (04)
+### Revenue Overview
+
+- Total Revenue: **$5,865,293.05**  
+- Return Loss: **$388,755.97**  
+- Net Revenue: **$5,476,537.08**
+
+### Return Rate
+
+- Overall Return Rate: **5.52%**
+
+### Business Interpretation
+
+Returns represent a meaningful revenue leakage of approximately **$389K**. However, the business remains financially healthy, retaining ~93% of total revenue after returns. This indicates an optimization opportunity rather than a structural failure.
+
+### Key Insight
+
+This dataset represents a **$5.8M e-commerce operation** where a **5.5% return rate results in nearly $390K in revenue leakage**, highlighting opportunities in product quality, customer targeting, and return policy optimization.
+
+---
+
+## Customer Analysis
+
 ### Top Customers by Lifetime Value
 
-C16655 → 13,885.10
+- C16655 → **13,885.10**  
+- C13565 → **11,984.28**  
+- C15379 → **11,375.58**  
+- C17116 → **7,424.34**  
+- C15644 → **7,244.07**
 
-C13565 → 11,984.28
+**Insight:** A small number of customers generate a disproportionate share of total revenue, indicating a strong Pareto distribution.
 
-C15379 → 11,375.58
-
-C17116 → 7,424.34
-
-C15644 → 7,244.07
-
-### Insight: A small group of customers generates a disproportionate share of revenue, indicating a strong Pareto distribution.
+---
 
 ### High Return Customers
-Multiple customers show 3 returns each
-These customers generally have low-to-moderate spending
 
-### Insight: Frequent return behavior is not necessarily tied to high value customers.
+- Several customers recorded **3 returns each**  
+- These customers generally have low to moderate spending levels  
+
+**Insight:** Frequent return behavior is not necessarily associated with high-value customers.
+
+---
 
 ### Customer Risk Segmentation
-Some customers show 100% return rate (1 order = 1 return)
-Many are flagged as HIGH RISK
 
-### Insight: A subset of customers exhibits extremely inefficient purchase behavior, but further filtering is needed to account for low-volume bias.
+- Some customers exhibit a **100% return rate (1 order = 1 return)**  
+- Multiple customers are flagged as **high risk**
 
-## Product Analysis (05)
+**Insight:** A subset of customers demonstrates highly inefficient purchasing behavior. However, low-volume bias should be considered when interpreting risk scores.
+
+---
+
+## Product Analysis
+
 ### Top Revenue-Generating Products
 
-The analysis identified a small set of products driving the majority of revenue:
+- P217031 (Toys) → **13,035.01**  
+- P242326 (Electronics) → **11,747.30**  
+- P224743 (Electronics) → **11,298.30**  
+- P216077 (Electronics) → **8,035.78**  
+- P225406 (Electronics) → **6,786.53**
 
-P217031 (Toys) → $13,035.01
-P242326 (Electronics) → $11,747.30
-P224743 (Electronics) → $11,298.30
-P216077 (Electronics) → $8,035.78
-P225406 (Electronics) → $6,786.53
-Insight:
+**Insight:** Electronics dominates high-revenue SKUs, indicating strong demand concentration. Toys and Sports contribute meaningfully but at a lower scale.
 
-Electronics dominates high-revenue SKUs, indicating strong demand concentration in this category. Toys and Sports also contribute significantly but at lower scale.
+---
 
 ### High Return Products
 
-Products with repeated return activity include:
+- P221459 → **3 returns**  
+- P247404 → **2 returns**  
+- P245813 → **2 returns**  
+- P244770 → **2 returns**
 
-P221459 → 3 returns
-P247404 → 2 returns
-P245813 → 2 returns
-P244770 → 2 returns
-Insight:
+**Insight:** Return activity is concentrated in a small subset of products. However, many are low-volume items, which can distort perceived risk.
 
-Return activity is concentrated in a small subset of products, but many of these are low-volume items, which can distort perceived risk if not normalized.
+---
 
 ### Product Risk Segmentation
 
-Several products show a 100% return rate, meaning every recorded order was returned:
+Several products show a **100% return rate**:
 
-P249954
-P249845
-P249843
-P249757
-P249740
-Insight:
+- P249954  
+- P249845  
+- P249843  
+- P249757  
+- P249740  
 
-These products are flagged as high-risk, but most are single-order cases. This highlights the importance of considering volume thresholds when evaluating risk.
+**Insight:** These products are flagged as high risk, but most are based on single-order cases. Risk interpretation should account for sample size.
+
+---
 
 ### Revenue Loss by Product
 
-The highest financial losses from returned orders are:
+- P238199 → **5,150.28**  
+- P221460 → **4,883.44**  
+- P237985 → **4,423.38**  
+- P245871 → **3,840.66**  
+- P244063 → **3,547.45**
 
-P238199 → $5,150.28
-P221460 → $4,883.44
-P237985 → $4,423.38
-P245871 → $3,840.66
-P244063 → $3,547.45
-Insight:
+**Insight:** A small number of products are responsible for a disproportionate share of revenue leakage. These represent high-priority optimization targets.
 
-A small number of products are responsible for a disproportionate share of revenue leakage, making them key targets for operational or quality improvements.
+---
 
 ### Overall Conclusion
 
-The product-level analysis reveals a classic Pareto pattern:
+The product-level analysis reveals a clear Pareto pattern:
 
-A small number of products drive most revenue
-A small number of products drive most losses
-Electronics is both the strongest and most dominant category
+- A small number of products generate most revenue  
+- A small number of products generate most losses  
+- Electronics is both the strongest and highest-risk category  
 
-### This creates a clear opportunity for:
+This creates opportunities in product quality optimization, return reduction strategies, and SKU-level performance monitoring.
 
-product quality optimization
-return reduction strategies
-SKU-level performance monitoring
+---
 
+## Category Analysis
 
-## Category Analysis (06)
-### 1. Revenue by Category
-Electronics → 2,018,229.53
-Home → 1,260,730.54
-Sports → 987,048.96
-Toys → 640,088.06
-Fashion → 587,083.14
-Grocery → 288,711.99
-Beauty → 83,400.83
+### Revenue by Category
 
-### Insight: Revenue is heavily concentrated in Electronics and Home, which together dominate the business.
+- Electronics → **2,018,229.53**  
+- Home → **1,260,730.54**  
+- Sports → **987,048.96**  
+- Toys → **640,088.06**  
+- Fashion → **587,083.14**  
+- Grocery → **288,711.99**  
+- Beauty → **83,400.83**
 
-### This indicates:
+**Insight:** Revenue is highly concentrated in Electronics and Home categories, indicating strong dependency on a limited set of revenue drivers.
 
-1. strong dependence on a small number of categories high revenue concentration risk
-2. Return Rate by Category
-Fashion → 8.05%
-Electronics → 7.30%
-Home → 5.53%
-Sports → 5.28%
-Toys → 5.13%
-Beauty → 3.42%
-Grocery → 2.59%
- 
-### Insight: Fashion has the highest return rate (clear quality/expectation mismatch issue) Electronics is both high revenue AND high return rate (critical trade-off category) Grocery and Beauty are stable, low-return categories
+---
 
-4. Revenue Loss by Category
-Electronics → 166,260.11
-Home → 74,698.63
-Sports → 51,167.41
-Fashion → 45,591.28
-Toys → 32,037.92
-Grocery → 15,780.72
-Beauty → 3,219.90
+### Return Rate by Category
 
-### Insight: Electronics is responsible for the majority of financial loss, even though it is also the top revenue generator.
+- Fashion → **8.05%**  
+- Electronics → **7.30%**  
+- Home → **5.53%**  
+- Sports → **5.28%**  
+- Toys → **5.13%**  
+- Beauty → **3.42%**  
+- Grocery → **2.59%**
 
-This confirms a key business tension:
+**Insight:** Fashion has the highest return rate, likely due to expectation mismatch or sizing issues. Electronics combines both high revenue and high return rate, making it a critical risk category. Grocery and Beauty are the most stable segments.
 
-High revenue categories are also the highest risk categories.
+---
+
+### Revenue Loss by Category
+
+- Electronics → **166,260.11**  
+- Home → **74,698.63**  
+- Sports → **51,167.41**  
+- Fashion → **45,591.28**  
+- Toys → **32,037.92**  
+- Grocery → **15,780.72**  
+- Beauty → **3,219.90**
+
+**Insight:** Electronics contributes the majority of revenue loss despite being the top revenue generator, reinforcing a high-revenue/high-risk trade-off.
+
+---
 
 ## Objectives
-- Quantify revenue lost due to returns
-- Identify high-risk customers
-- Detect underperforming products
-- Generate business insights using SQL
 
+- Quantify revenue loss due to returns  
+- Identify high-risk customers  
+- Detect underperforming products  
+- Analyze category-level performance  
+- Generate actionable business insights using SQL  
+
+---
 
 ## Tools
-- SQL (PostgreSQL / MySQL)
+
+- SQL (SQLite / PostgreSQL compatible)
 - GitHub
 
+---
+
 ## Project Structure
-- data/: raw and processed datasets
-- sql/: SQL scripts for analysis
-- docs/: documentation and insights
+
+- data/ → raw dataset  
+- sql/ → SQL scripts (schema, ETL, analysis)  
+- docs/ → documentation and insights  
