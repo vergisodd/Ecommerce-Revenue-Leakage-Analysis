@@ -1,43 +1,54 @@
--- Create Customers table
+-- NOTE:
+-- Workflow used in this project:
+-- 1. Raw dataset imported into staging_ecommerce
+-- 2. Data cleaned and inserted into normalized tables below
+-- 3. Analysis performed on structured relational model
+
+-- =========================
+-- CUSTOMERS TABLE
+-- =========================
 CREATE TABLE customers (
-    customer_id VARCHAR(20) PRIMARY KEY,
-    customer_age INT,
-    customer_gender VARCHAR(10)
+    customer_id TEXT PRIMARY KEY,
+    customer_age INTEGER,
+    customer_gender TEXT
 );
 
--- Create Products table
+-- =========================
+-- PRODUCTS TABLE
+-- =========================
 CREATE TABLE products (
-    product_id VARCHAR(20) PRIMARY KEY,
-    category VARCHAR(50),
-    price DECIMAL(10,2),
-    discount DECIMAL(5,2)
+    product_id TEXT PRIMARY KEY,
+    category TEXT,
+    price REAL,
+    discount REAL
 );
 
--- Create Orders table
+-- =========================
+-- ORDERS TABLE (FACT TABLE)
+-- =========================
 CREATE TABLE orders (
-    order_id VARCHAR(20) PRIMARY KEY,
-    customer_id VARCHAR(20),
-    product_id VARCHAR(20),
+    order_id TEXT PRIMARY KEY,
+    customer_id TEXT,
+    product_id TEXT,
     order_date DATE,
     delivered_date DATE,
-    quantity INT,
-    payment_method VARCHAR(50),
-    region VARCHAR(50),
-    total_amount DECIMAL(10,2),
-    shipping_cost DECIMAL(10,2),
-    profit_margin DECIMAL(10,2),
-
+    quantity INTEGER,
+    payment_method TEXT,
+    region TEXT,
+    total_amount REAL,
+    shipping_cost REAL,
+    profit_margin REAL,
     FOREIGN KEY (customer_id) REFERENCES customers(customer_id),
     FOREIGN KEY (product_id) REFERENCES products(product_id)
 );
 
--- Create Returns table
+-- =========================
+-- RETURNS TABLE
+-- =========================
 CREATE TABLE returns (
-    return_id SERIAL PRIMARY KEY,
-    order_id VARCHAR(20),
-    returned VARCHAR(5),
+    return_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    order_id TEXT,
     request_date DATE,
     return_reason TEXT,
-
     FOREIGN KEY (order_id) REFERENCES orders(order_id)
 );
