@@ -7,14 +7,6 @@
 
 ---
 
-## Data Source
-
-This project uses a real-world e-commerce dataset containing orders and returns:
-
-https://www.kaggle.com/datasets/angellawl/e-commerce-dataset-order-and-return?resource=download
-
----
-
 ## Overview
 
 This project analyzes e-commerce transaction data to identify revenue loss caused by customer returns, evaluate product performance, and understand customer behavior patterns. The goal is to simulate a real-world retail analytics workflow using SQL, from raw data ingestion to business insights.
@@ -203,4 +195,14 @@ This creates opportunities in product quality optimization, return reduction str
 
 - data/ → raw dataset  
 - sql/ → SQL scripts (schema, ETL, analysis)  
-- docs/ → documentation and insights  
+- docs/ → documentation and insights
+
+---
+
+## Data Source
+
+This project uses a real-world e-commerce dataset containing orders and returns:
+
+https://www.kaggle.com/datasets/angellawl/e-commerce-dataset-order-and-return?resource=download
+
+---
