@@ -207,14 +207,3 @@ Based on the analysis, the business should prioritize:
 - Separating **high customer value** from **high return risk** in customer monitoring
 - Building a recurring dashboard to track return rate, return loss, and high-risk segments over time
 
----
-
-## Project Structure
-
-```bash
-Ecommerce-Revenue-Leakage-Analysis/
-│
-├── data/          # Raw dataset
-├── sql/           # SQL scripts for schema, cleaning, and analysis
-├── docs/          # Documentation and insights
-└── README.md
