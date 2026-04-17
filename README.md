@@ -9,7 +9,11 @@
 
 ## Overview
 
-This project analyzes e-commerce transaction data to identify revenue loss caused by customer returns, evaluate product performance, and understand customer behavior patterns. The goal is to simulate a real-world retail analytics workflow using SQL, from raw data ingestion to business insights.
+This project analyzes e-commerce revenue leakage using SQL to identify where revenue is being lost, measure the business impact, and recommend actions to improve profitability.
+
+* Identified the main sources of revenue leakage across transactions, discounts, returns, and payment behavior.
+* Used SQL to clean, join, and analyze business data to uncover high-impact revenue loss patterns.
+* Translated the analysis into business recommendations that could help an e-commerce business improve revenue retention.
 
 ---
 
