@@ -1,0 +1,19 @@
+Kaggle Dataset
+      ↓
+staging_ecommerce (Raw Table)
+      ↓
+ETL Processing (SQL Cleaning & Transformation)
+      ↓
+Normalized Tables
+   ├── customers
+   ├── products
+   ├── orders
+   └── returns
+      ↓
+Analytical SQL Layer
+      ↓
+Business Insights & KPIs
+   ├── Revenue Analysis
+   ├── Customer Segmentation
+   ├── Product Performance
+   └── Category Analysis
