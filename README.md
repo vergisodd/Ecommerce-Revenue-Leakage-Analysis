@@ -1,5 +1,20 @@
 # Ecommerce Revenue Leakage Analysis
 
+![SQL](https://img.shields.io/badge/SQL-Data%20Analysis-blue)
+![Type](https://img.shields.io/badge/Project-Analytics%20Case%20Study-green)
+![Status](https://img.shields.io/badge/Status-Completed-brightgreen)
+![Domain](https://img.shields.io/badge/Domain-E--commerce-orange)
+
+---
+
+## Data Source
+
+This project uses a real-world e-commerce dataset containing orders and returns:
+
+https://www.kaggle.com/datasets/angellawl/e-commerce-dataset-order-and-return?resource=download
+
+---
+
 ## Overview
 
 This project analyzes e-commerce transaction data to identify revenue loss caused by customer returns, evaluate product performance, and understand customer behavior patterns. The goal is to simulate a real-world retail analytics workflow using SQL, from raw data ingestion to business insights.
