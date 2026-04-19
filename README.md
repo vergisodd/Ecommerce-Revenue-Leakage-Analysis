@@ -49,6 +49,16 @@ This project uses a real-world e-commerce dataset containing order and return in
 
 ---
 
+SQL Techniques Demonstrated
+Data modeling using a normalized relational schema (customers, products, orders, returns)
+Complex joins across multiple tables to combine transactional and return data
+Aggregations to compute revenue, return loss, and performance metrics
+Subqueries and filtering to isolate high-risk entities
+Window functions (if used — if not, we can add one easily)
+Data cleaning and transformation directly in SQL
+
+---
+
 ## Analytical Approach
 
 The analysis was structured in four parts:
