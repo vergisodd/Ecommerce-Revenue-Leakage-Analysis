@@ -1,3 +1,5 @@
+### This section documents the transformation of raw e-commerce data into a structured relational model used for analysis.
+
 ## 1. Raw Data Staging
 
 The original dataset was imported as a single denormalized table (staging_ecommerce) containing all transactional, customer, product, and return information.
