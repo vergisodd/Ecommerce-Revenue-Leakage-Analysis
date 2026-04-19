@@ -217,3 +217,9 @@ Based on the analysis, the business should prioritize:
 - Separating **high customer value** from **high return risk** in customer monitoring
 - Building a recurring dashboard to track return rate, return loss, and high-risk segments over time
 
+--
+Data Modeling & Architecture
+
+Detailed data preparation, normalization, and schema design are documented here:
+
+link: Data Modeling & Preparation
