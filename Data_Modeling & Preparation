@@ -5,7 +5,7 @@ The original dataset was imported as a single denormalized table (staging_ecomme
 Why staging?
 Preserve raw data integrity
 Enable controlled transformations
-Avoid modifying original source data
+Avoid modifying source data
 
 ## 2. Data Normalization 
 
